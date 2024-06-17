@@ -27,6 +27,7 @@ class HomeViewModel: ObservableObject{
                     self.saveData(context: context)
                 case .failure(let error):
                     print(error)
+                    self.isError = true
                     switch error{
                     case .decodingError:
                         self.error = "Error al decodificar los datos"
@@ -39,7 +40,7 @@ class HomeViewModel: ObservableObject{
                     case .invalidData:
                         self.error = "Datos invalidos"
                     }
-                    self.isError = true
+                    
                 }
             }
         },cantidad: cantidad)

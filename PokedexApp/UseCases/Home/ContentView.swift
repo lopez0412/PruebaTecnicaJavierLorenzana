@@ -29,6 +29,7 @@ struct ContentView: View {
                     if pokeViewModel.listPokemon.isEmpty{
                         ProgressView()
                             .onAppear{
+                                deleteFromCoreData()
                                 pokeViewModel.getListPokemon(context: viewContext,cantidad: cantidadPokemon)
                             }//:Onappear
                     } else{
@@ -96,7 +97,7 @@ struct ContentView: View {
         }
     }
     
-    func refreshMethod(){
+    func deleteFromCoreData(){
         do{
             results.forEach { (pokemon) in
                 viewContext.delete(pokemon)
@@ -106,6 +107,9 @@ struct ContentView: View {
         }catch{
             print(error.localizedDescription)
         }
+    }
+    func refreshMethod(){
+        deleteFromCoreData()
         cantidadPokemon += 5
         pokeViewModel.listPokemon.removeAll()
         refreshed = true

@@ -63,7 +63,7 @@ class NetworkManager{
                                //print(index)
                                //print(pokemonDetails)
                                
-                               if pokemonList[index].imageUrl == "" {
+                               if pokemonList[index].imageUrl == nil {
                                    // Actualizar la URL de la imagen en la lista de Pokémon
                                    pokemonList[index].imageUrl = pokemonDetails.sprites.front_default
                                }
@@ -104,7 +104,7 @@ class NetworkManager{
                let decoder = JSONDecoder()
                let decodedResponse = try decoder.decode(PokemonDetails.self, from: data)
                
-               let pokemonDetails = decodedResponse
+               var pokemonDetails = decodedResponse
                
                completed(.success(pokemonDetails))
                

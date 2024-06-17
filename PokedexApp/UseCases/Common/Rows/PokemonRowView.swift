@@ -16,15 +16,22 @@ struct PokemonRowView: View {
     var body: some View {
         HStack{
             //Valido si la imagen se descargo correctamente y si la imagen no la descargo muestra una pokebola
-            if (pokemon?.imageUrl == "" || fetchedData?.imageUrl == "") {
+            if (pokemon == nil && fetchedData!.imageUrl == nil) {
                 Image("pokeball")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 100, alignment: .center)
             }else{
-                AsyncImage(url: URL(string: ((pokemon == nil ? fetchedData?.imageUrl : pokemon?.imageUrl)!)))
-                    .scaledToFit()
-                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.3),radius: 3, x: 2, y: 2)
+                if( pokemon != nil && pokemon?.imageUrl == nil){
+                    Image("pokeball")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100, alignment: .center)
+                }else{
+                    AsyncImage(url: URL(string: (((pokemon == nil ? fetchedData!.imageUrl : pokemon!.imageUrl)!))))
+                        .scaledToFit()
+                        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.3),radius: 3, x: 2, y: 2)
+                }
             }
             VStack(alignment: .leading, spacing: 5) {
                 Text(pokemon == nil ? fetchedData!.name! : pokemon!.name)
