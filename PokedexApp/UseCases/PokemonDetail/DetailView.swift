@@ -19,9 +19,11 @@ struct DetailView: View {
                         detailViewModel.getDetails(url: pokemon == nil ? fetchedData!.url! : pokemon!.url)
                     }//:Onappear
             } else{
+                Text("Detalle del Pokemon")
+                    .font(.title2)
                 CardView(pokemon: detailViewModel.detalle!)
             }
-        }
+        }.offset(y: -30)
     }
 }
 

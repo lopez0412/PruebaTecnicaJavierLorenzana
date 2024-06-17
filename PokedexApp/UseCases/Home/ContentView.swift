@@ -67,15 +67,16 @@ struct ContentView: View {
                         Button {
                             refreshMethod()
                         } label: {
-                            Image(systemName: "arrow.clockwise.circle")
+                            Image(systemName: "arrow.clockwise")
                                 .font(.title)
                         }
                     }
+                    //Este item cambia el origen de los datos, online o core data.
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button{
                             dataOnline.toggle()
                         }label: {
-                            Image(systemName: dataOnline ? "folder.circle":"wifi.circle")
+                            Image(systemName: dataOnline ? "externaldrive":"wifi")
                                 .font(.title)
                         }
                     }
@@ -94,6 +95,13 @@ struct ContentView: View {
                     permisos()
                 }//:OnAppear
                 .searchable(text: $searchText)
+                .onChange(of: searchText) { search in
+                    if searchText.isEmpty {
+                        results.nsPredicate = NSPredicate(value: true)
+                    } else {
+                        results.nsPredicate = NSPredicate(format: "name CONTAINS[cd] %@", searchText.lowercased())
+                    }
+                }
         }
     }
     
@@ -169,6 +177,7 @@ struct ContentView: View {
         
     }
 
+    //Filtra los datos de la lista de la Api
     var searchResults: [PokemonApi] {
            if searchText.isEmpty {
                return pokeViewModel.listPokemon
@@ -176,6 +185,7 @@ struct ContentView: View {
                return pokeViewModel.listPokemon.filter { $0.name.contains(searchText.lowercased()) }
            }
        }
+    
 
     
 }

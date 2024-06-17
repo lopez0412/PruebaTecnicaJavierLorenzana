@@ -104,7 +104,7 @@ class NetworkManager{
                let decoder = JSONDecoder()
                let decodedResponse = try decoder.decode(PokemonDetails.self, from: data)
                
-               var pokemonDetails = decodedResponse
+               let pokemonDetails = decodedResponse
                
                completed(.success(pokemonDetails))
                
