@@ -18,7 +18,7 @@ Prueba tecnica para Banco Atlantida
 
 ![App Screenshot](PokedexApp/Assets.xcassets/SreenShots/Notification1.imageset/Notification1.png) Notification
 
-![App Screenshot](PokedexApp/Assets.xcassets/SreenShots/Notification1.imageset/Notification2.png) Notification
+![App Screenshot](PokedexApp/Assets.xcassets/SreenShots/Notification2.imageset/Notification2.png) Notification
 
 ## Authors
 
