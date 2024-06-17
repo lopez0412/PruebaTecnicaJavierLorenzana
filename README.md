@@ -6,7 +6,7 @@ Prueba tecnica para Banco Atlantida
 
 
 
-![Logo](PokedexApp/Assets.xcassets/AppIcon.appiconset/pokeball_PNG24-1024x1024.png) 
+![Logo](PokedexApp/Assets.xcassets/AppIcon.appiconset/pokeball_PNG24-1024x1024.png | width=100) 
 
 ## Screenshots
 
