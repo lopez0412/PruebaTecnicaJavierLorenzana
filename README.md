@@ -8,11 +8,11 @@ Prueba tecnica para Banco Atlantida
 
 ## Screenshots
 
-![App Screenshot](<img src="PokedexApp/Assets.xcassets/SreenShots/Main.imageset/Main.png" width="200" height="200"/>) MainView
+<img src="PokedexApp/Assets.xcassets/SreenShots/Main.imageset/Main.png" width="200" height="300"/> MainView
 
-![App Screenshot](PokedexApp/Assets.xcassets/SreenShots/Card.imageset/Card.png) DetailView
+<img src="PokedexApp/Assets.xcassets/SreenShots/Card.imageset/Card.png" width="200" height="300"/> DetailView
 
-![App Screenshot](PokedexApp/Assets.xcassets/SreenShots/ErrorMessage.imageset/ErrorMessage.png) ErrorMessage
+<img src="PokedexApp/Assets.xcassets/SreenShots/ErrorMessage.imageset/ErrorMessage.png" width="200" height="300"/> ErrorMessage
 
 ![App Screenshot](PokedexApp/Assets.xcassets/SreenShots/Notification1.imageset/Notification1.png) Notification
 
